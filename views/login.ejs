@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/assets/img/favicon.ico">
+    <title>Login</title>
+    <!-- Bootstrap core CSS -->
+      
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/style.css" rel="stylesheet" />
+  <link href="/assets/css/footer.css" rel="stylesheet" />
+  <link href="/assets/css/navbar.css" rel="stylesheet" />
+  <link href="/assets/css/team.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/work.css">
+
+</head>
+
+<body>
+
+    <section class="main-section team-section-header services-section ">
+      <div class="home-section-overlay">
+    
+        <nav class="navbar-container">
+          <div class="logo-container">
+            <a class="navbar-brand" href="#">
+              <img src="/assets/images/mainlogo.png"/></a>
+          </div>
+        
+          <ul class="navbar-ul desktop-nav">
+            <li class="navbar-item ">
+              <a href="/" class="navbar-link " > Home</a>
+            </li>
+            <li class="navbar-item">
+              <a href="/about" class="navbar-link" > About</a>
+            </li>
+           
+            <li class="navbar-item">
+              <a href="/services" class="navbar-link" > Services</a>
+            </li>
+            <li class="navbar-item">
+              <a href="/work" class="navbar-link" > Work</a>
+            </li>
+          
+            
+            <li class="navbar-item">
+              <a href="/contact" class="navbar-link" >Contact</a>
+            </li>
+            <li class="navbar-item active">
+            <a href="/blog" class="navbar-link" >Blogs</a>
+          </li>
+          </ul>
+        
+        
+        <div class="toggler inactive" id="toggler" onclick="menuClicked()">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        
+          <ul class="navbar-ul mobile-nav hidemobilenav" id="mobileNav">
+            <li class="navbar-item ">
+              <a href="/" class="navbar-link " > Home</a>
+            </li>
+            <li class="navbar-item">
+              <a href="/about" class="navbar-link" > About</a>
+            </li>
+            <li class="navbar-item">
+              <a href="/team" class="navbar-link" > Team</a>
+            </li>
+            <li class="navbar-item">
+              <a href="/services" class="navbar-link" > Services</a>
+            </li>
+            <li class="navbar-item">
+              <a href="/work" class="navbar-link" > Work</a>
+            </li>
+            <li class="navbar-item">
+              <a href="/lab" class="navbar-link" >Lab</a>
+            </li><li class="navbar-item">
+            <li class="navbar-item">
+              <a href="/careers" class="navbar-link" > Careers</a>
+            </li>
+              <a href="/contact" class="navbar-link" >Contact</a>
+            </li>
+          </ul>
+        
+        
+        
+        </nav>
+
+        <div class="homepage-container">
+          <div class="container">
+            <div class="row align-item-center">
+              <div class="col-lg-8">
+              
+                <h2 class="cta-heading">Best And Most Loved Works by
+                  <br />
+                  <span class="main-heading">Our Clients.</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="container  row m-auto" >
+
+        <div id='hero' class='col-8 m-auto row login-div'>
+            <form method="POST" action="/api/admin/signin">
+                <div class="form-group col-8 m-auto">
+                    <label for="recipient-name" class="col-form-label f-20">Email </label>
+                    <input type="email" class="form-control" name='email' id="recipient-name" required>
+                </div>
+                <div class="form-group col-8 m-auto">
+                    <label for="message-text" class="col-form-label f-20">Password</label>
+                    <input type="password" class="form-control" name='password' id="recipient-name" required>
+                </div>
+                <div class='text-center'>
+                    <button type="submit" class="btn btn-outline-success">Login</button>
+                </div>
+            </form>
+        </div>
+
+
+</div>
+ <footer class="footer " style='margin-top:20px'>
+    <div class="container-fluid">
+      <div class="row info-box">
+        <div class="col-lg-3 col-md-6 col-12">
+          <div class="counter-box">
+            <span>20+</span>
+            <p>Customers Served</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <div class="counter-box">
+            <span>20+</span>
+            <p>UX Researches</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <div class="counter-box">
+            <span>20+</span>
+            <p>Design Sprints</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <div class="counter-box">
+            <span>20+</span>
+            <p>User Studies</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-7 col-md-9 col-12 connect">
+          <span>We’d love to connect with you!</span><br/>
+         
+        </div>
+        <div class="col-lg-5 col-md-9 col-12 connect">
+          <a class="no-deco" href="./contact"><button class="custom-btn abouttextcard-button connect-cta">
+            VIEW IN DETAIL
+          </button></a>
+        </div>
+      </div>
+
+      <div class="row myfooter">
+        <div class="col-lg-3 col-md-4 col-12">
+          <div style="display: flex; flex-direction: column;justify-content: center; height: 100%;">
+            <span>We are always looking out for talent!</span>
+            <a href="mailto:info@sattva-labs.com">info@sattva-labs.com</a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-12">
+          <h6 class="footer-heading" style="margin-bottom: 15px">Quick Links</h6>
+
+          <p>
+            <a href="./team">Team</a><br /><br />
+            <a href="./Lab">Lab</a><br /><br />
+            <a href="./careers">Careers</a><br /><br />
+            <a href="./contact">Contact</a><br /><br />
+
+          </p>
+        </div>
+        <div class="col-lg-2 col-md-4 col-12">
+          <h6 class="footer-heading" style="margin-bottom: 15px">SAY HELLO @MUMBAI</h6>
+
+          <p>
+            Worksquare, Saki Naka<br /><br />
+            Powai, Mumbai<br /><br />
+            Maharashtra<br /><br />
+
+            +91 98507 60989
+          </p>
+        </div>
+        <div class="col-lg-2 col-md-4 col-12">
+          <h6 class="footer-heading" style="margin-bottom: 15px">SAY HELLO @NASIK</h6>
+
+          <p>
+            1 Unique Heights<br /><br />
+            Near Ambad Police Station,<br /><br />
+            Ashwin Nagar CIDCO Nashik<br /><br />
+
+            +91 98507 60989
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12">
+
+          <div id="lab_social_icon_footer">
+            <div class="container">
+              <div class="text-center center-block">
+                <a href="https://www.facebook.com/sattvalabs/"><i style="color:#fff"
+                    class="fa fa-facebook-square fa-3x social"></i></a>
+                <a href="https://instagram.com/sattvalabs?igshid=oxt4le9x53vc"><i style="color:#fff" id="social-tw"
+                    class="fa fa-instagram fa-3x social"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/company/sattvalabs"> <i style="color:#fff"
+                    id="social-gp" class="fa fa-linkedin-square fa-3x social"></i></a>
+                <a target="_blank" href="https://twitter.com/sattvalabs?s=11"><i style="color:#fff" id="social-em"
+                    class="fa fa-twitter-square fa-3x social"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+      <div style="background-color: #edf9fc;">
+        <p style="text-align: center; margin:0;"><span style="color: #0798cd;"><strong>2021 Sattva-labs Innovation Pvt. Ltd</strong></span></p>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+        <script data-cfasync="false"
+            src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script src="/assets/js/jquery.min.js"></script>
+
+        <script src="/assets/js/popper.min.js"></script>
+
+        <script src="/assets/js/bootstrap.min.js"></script>
+
+        <script src="/assets/js/jquery.meanmenu.js"></script>
+
+        <script src="/assets/js/owl.carousel.min.js"></script>
+
+        <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+
+        <script src="/assets/js/imagelightbox.min.js"></script>
+
+        <script src="/assets/js/odometer.min.js"></script>
+
+        <script src="/assets/js/jquery.appear.min.js"></script>
+
+        <script src="/assets/js/jquery.ajaxchimp.min.js"></script>
+
+        <script src="/assets/js/form-validator.min.js"></script>
+
+        <script src="/assets/js/contact-form-script.js"></script>
+
+        <script src="/assets/js/main.js"></script>
+</body>
+
+<!-- Mirrored from templates.envytheme.com/ketan/default/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Feb 2021 11:47:04 GMT -->
+
+</html>
