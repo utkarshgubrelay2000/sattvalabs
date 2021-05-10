@@ -44,8 +44,6 @@ blog.findById(req.body.id).then(found=>{
 }).catch(err=>{
   res.send(err)
 })
-await unlinkAsync(req.file.path)
-
 });
 })
 await unlinkAsync(req.file.path)
