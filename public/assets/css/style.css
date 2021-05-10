@@ -85,6 +85,16 @@ align-items: center;
     font-size: 16px;
     left: 15vw;
 }
+.cta-btn{
+    border-radius: 50px;
+   
+color: white !important;
+    border: none;
+   background-color: #07ABCD !important;
+    font-weight: bold;
+  padding: 20px;
+    width: 120px;
+}
 
 .services-icon-container{
     width: 100%;
