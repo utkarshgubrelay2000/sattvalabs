@@ -1,0 +1,83 @@
+
+    <section class="main-section" style="height : 80vh">
+      <div class="container">
+      
+        <h3>Case Studies</h3>
+
+        <h6 class="description-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum.</h6>
+
+
+        <div class=" justify-content-space-between">
+          <div class="work-card-container">
+       
+<div class="work-card">
+<h5 class="work-card-heading">Hello World</h5>
+<br/>
+<p>
+    Strategy Consulting & Business Research
+</p>
+
+</div>
+<div class="work-card ">
+<h5 class="work-card-heading">Hello World</h5>
+<br/>
+<p>
+    Strategy Consulting & Business Research
+</p>
+</div>
+<div class="work-card ">
+<h5 class="work-card-heading">Hello World</h5>
+<br/>
+<p>
+    Strategy Consulting & Business Research
+</p>
+</div>
+<div class="work-card ">
+<h5 class="work-card-heading">Hello World</h5>
+<br/>
+<p>
+    Strategy Consulting & Business Research
+</p>
+</div>
+<div class="work-card ">
+<h5 class="work-card-heading">Hello World</h5>
+<br/>
+<p>
+    Strategy Consulting & Business Research
+</p>
+</div>
+<div class="work-card ">
+<h5 class="work-card-heading">Hello World</h5>
+<br/>
+<p>
+    Strategy Consulting & Business Research
+</p>
+</div>
+
+
+          </div>
+
+       
+
+          <div class="work-description-container">
+            <div class="about-text-card lab-card single-work-card">
+              <div class="lab-card-content work-content">
+                <span>
+                  <img 
+                  id="logoImage"
+                    src="http://new.sattva-labs.com/wp-content/uploads/2020/07/works-300x200.jpg"
+                  />
+                </span>
+
+                <h6 class="labcard-heading workcard-heading" id="CardHeading">Design Services</h6>
+
+                <h6 class="workcontent-description" id="CardDesc">
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                </h6>
+              </div>
+              <button class="custom-btn workcard-button">View in Detail</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
