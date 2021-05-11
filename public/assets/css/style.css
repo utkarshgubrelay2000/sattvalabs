@@ -367,11 +367,28 @@ margin: 20px;
 }
 .f-60{
     font-size: 60px !important;
+    padding: 20px;
 }
 .f-20{
     font-size: 25px;
     color: #07ABCD;
 
+}
+.m-top-20{
+    margin-top: 80px;
+}
+.ck-editor__editable_inline {
+    min-height: 100px;
+    position: relative;
+}
+.input-blog{
+    height: 25px;
+   border: none;
+    color: black;
+    box-shadow: 2px 2px 2px #07ABCD;
+    padding: 20px;
+    width: 400px;
+    margin: auto;
 }
 .login-div{
     border: #07ABCD 2px solid;

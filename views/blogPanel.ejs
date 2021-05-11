@@ -104,27 +104,33 @@
 </p>
 <div class="collapse" style="    
 margin: auto; margin-bottom:32px" id="collapseExample" >
-  <div class="card card-body text-center" >
+  <div class="card card-body text-center" style='border:none;' >
 
-		  <input required name='heading' id='heading' placeholder='Title' >  <br>
-		  <input name='shortContent' id="shortContent" placeholder='Short Description of your blog' >  <br>
-		 
-			  <div >
-			  <p>  Write Blog content here</p>
-			  <input id="editor" name='content' style="width: 100%;"> 
-
-			</div> <br>
-		</form>
-		<form action="/blog/uploadImage" method="post" enctype="multipart/form-data">
-			<label> Upload A ThumbNail for Your Blog</label>
+		  <input required class='input-blog' name='heading' id='heading' placeholder='Title' >  <br>
+		  <input class='input-blog' name='shortContent' id="shortContent" placeholder='Short Description of your blog' >  <br>
+		 		<form action="/blog/uploadImage" method="post" enctype="multipart/form-data">
+			<h3> Upload A ThumbNail for Your Blog</h3><br>
 			<input type="file" required name="avatar" >
 			<input type="text "   style="display:none" id='idField' name='id'>
 			<button id='submitButton' class='cta-btn' style="display:none">submit</button>
 		  </form>
-		</div>
-			<div class='text-center col-12'>
-		<button onclick="myfunction()" class="btn btn-outline-success mt-2 rounded-pill">Submit</button>
+	
+			  <div >
+        <br>
+       
+			  <h4>  Write Blog content here</h4>
+        <div style="width: 600px;height:30px;paddding:10px; margin:auto">
+
+			  <input  id="editor" name='content' value='<h1>Write Your Blog Content</h1>' > 
+        </div>
+
+			</div> <br>
+		</form>
+	</div>
+			<div class='text-center col-12 m-top-20'>
+		<button onclick="myfunction()" class="cta-btn mt-2 rounded-pill">Submit</button>
 			</div>
+      <hr>
 </div>
 
 
