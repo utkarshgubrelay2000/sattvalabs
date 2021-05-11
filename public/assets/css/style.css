@@ -390,6 +390,9 @@ margin: 20px;
     width: 400px;
     margin: auto;
 }
+.pad-30{
+padding: 30px;
+}
 .login-div{
     border: #07ABCD 2px solid;
     padding: 20px;
