@@ -119,7 +119,7 @@ margin: auto; margin-bottom:32px" id="collapseExample" >
         <br>
        
 			  <h4>  Write Blog content here</h4>
-        <div style="width: 600px;height:30px;paddding:10px; margin:auto">
+        <div style="width: 600px;paddding:10px; margin:auto">
 
 			  <input  id="editor" name='content' value='<h1>Write Your Blog Content</h1>' > 
         </div>
@@ -127,7 +127,7 @@ margin: auto; margin-bottom:32px" id="collapseExample" >
 			</div> <br>
 		</form>
 	</div>
-			<div class='text-center col-12 m-top-20'>
+			<div class='text-center col-12 '>
 		<button onclick="myfunction()" class="cta-btn mt-2 rounded-pill">Submit</button>
 			</div>
       <hr>
@@ -358,6 +358,8 @@ let reponseFromBlogPosting=	await fetch('/blog/postBlog', {
   }).then(function(data) {
 	console.log('done',data)
 	return data;
+  }).catch(err=>{
+    alert("Something went Wrong")
   });
   document.getElementById('idField').value=reponseFromBlogPosting
   console.log(reponseFromBlogPosting, document.getElementById('idField'))
