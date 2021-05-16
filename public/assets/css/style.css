@@ -383,13 +383,17 @@ margin: 20px;
 }
 .input-blog{
     height: 25px;
-   border: none;
+   border: 2px solid #f4f4f4;
     color: black;
-    box-shadow: 2px 2px 2px #07ABCD;
     padding: 20px;
     width: 400px;
     margin: auto;
+
 }
+.label-blog{
+    font-size: 20px;
+    font-weight: 600;
+  }
 .pad-30{
 padding: 30px;
 }

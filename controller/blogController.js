@@ -1,27 +1,105 @@
 const admin = require('../model/adminModel');
 const blog=require('../model/blogModel');
 
-exports.postBlog= async (req,res)=>{
-    const {content,heading,shortContent,userId}=req.body
-    console.log(req.body.thumbImage)
-   // res.render('author',{content:content})
-   
-    let newdate= new Date()
-let blogId=heading.replace(/\s/g,"-")
-// //console.log(newdate.toDateString())
-   let newBog=new blog({
-       heading:heading,content:content, blogId: blogId,
-       date:newdate.toDateString(),time:newdate.toLocaleTimeString(),
-       shortContent:shortContent,userId:userId
-   })
-   newBog.save().then(saved=>{
-       console.log(shortContent)
-       res.json(saved._id)
-    //  res.redirect('/api/admin/secret')
-   }).catch(err=>{
-      res.send('404 not found')
-   })
-}
+exports.addBlog = (req, res) => {
+    res.render("addBlog");
+  };
+
+  exports.postBlog = async (req, res) => {
+    const {
+      content,
+      heading,
+      shortContent,
+      userId,
+      authorName,
+      thumbImage,
+      authorImage,
+      mainHeaderImage,
+      authorDesc,
+      socialAcc
+    } = req.body;
+    // res.render('author',{content:content})
+  
+    let newdate = new Date();
+    console.log(newdate)
+    let blogId = heading.replace(/\s/g, "-");
+    // //console.log(newdate.toDateString())
+    let newBog = new blog({
+      heading: heading,
+      content: content,
+      blogId: blogId,
+      day: newdate.getDate(),
+      month: newdate.toLocaleString("default", { month: "long" }),
+      shortContent: shortContent,
+      userId: userId,
+      thumbImage: thumbImage,
+      mainHeaderImage: mainHeaderImage,
+      authorImage: authorImage,
+      authorName: authorName,
+      socialAcc:socialAcc,
+      authorDesc:authorDesc
+    });
+    newBog
+      .save()
+      .then((saved) => {
+        console.log(shortContent);
+        res.json('Success');
+        //  res.redirect('/api/admin/secret')
+      })
+      .catch((err) => {
+        res.send("404 not found");
+      });
+  };
+  exports.editBlog = (req, res) => {
+    const { content,
+      heading,
+      shortContent,
+      userId,
+      authorName,
+      thumbImage,
+      authorImage,
+      mainHeaderImage,
+      socialAcc,
+      authorDesc
+    } = req.body;
+    let blogId = heading.replace(/\s/g, "-");
+    let newdate=new Date()
+    blog
+      .findByIdAndUpdate(req.params.id, {
+        heading: heading,
+      content: content,
+      blogId: blogId,
+      day: newdate.getDay(),
+      month: newdate.toLocaleString("default", { month: "long" }),
+      shortContent: shortContent,
+      userId: userId,
+      thumbImage: thumbImage,
+      mainHeaderImage: mainHeaderImage,
+      authorImage: authorImage,
+      authorName: authorName,
+      socialAcc:socialAcc,
+      authorDesc:authorDesc
+      })
+      .then((saved) => {
+        blog
+          .find({})
+          .then((blogs) => {
+            admin.find({}).then((userDetails) => {
+              console.log(userDetails);
+              res.render("blogPanel", {
+                blogs: blogs,
+                userDetails: userDetails[0],
+              });
+            });
+          })
+          .catch((err) => {
+            res.send("4040 not found");
+          });
+      })
+      .catch((err) => {
+        res.status(404).json("4040 not found");
+      });
+  };
 exports.adminpanel=(req,res)=>{
 
     blog.find({}).then(blogs=>{
@@ -34,24 +112,7 @@ exports.adminpanel=(req,res)=>{
         res.send('4040 not found')
     })
 }
-exports.editBlog=(req,res)=>{
-    const {content,heading}=req.body
-    let blogId=heading.replace(/\s/g,"-")
-   blog.findByIdAndUpdate(req.params.id,{ heading:heading,content:content,
-     blogId: blogId}).then(saved=>{
-        blog.find({}).then(blogs=>{
-            admin.find({}).then(userDetails=>{
-                console.log(userDetails)
-                res.render('adminPanel',{blogs:blogs,userDetails:userDetails[0]})
-    
-            })
-        }).catch(err=>{
-            res.send('4040 not found')
-        })
-    }).catch(err=>{
-       res.status(404).json('4040 not found')
-    })
-}
+
 exports.deleteBlog=(req,res)=>{
 console.log('done',req.params)
    blog.findOneAndDelete({blogId:req.params.id}).then(success=>{

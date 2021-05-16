@@ -55,7 +55,7 @@ await unlinkAsync(req.file.path)
 router.get('/postBlog',(req,res)=>{
   res.render('author')
 })
-
+router.get('/AddBlog/:token',verifyAdmin,blogController.addBlog)
 router.get('/adminPanel/:token',blogController.adminpanel)
 router.get('/api/admin/secret',verifyAdmin,blogController.adminpanel)
 router.post('/postBlog',blogController.postBlog,err=>{

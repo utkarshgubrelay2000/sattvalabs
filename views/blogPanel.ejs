@@ -94,7 +94,7 @@
 <p>
 <div class='text-center'>
   <a class="btn btn-success text-center" 
-  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+ onclick='AddPanel()'>
     Add a New Blog
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
@@ -102,40 +102,6 @@
   </a>
 </div>
 </p>
-<div class="collapse" style="    
-margin: auto; margin-bottom:32px" id="collapseExample" >
-  <div class="card card-body text-center" style='border:none;' >
-
-		  <input required class='input-blog' name='heading' id='heading' placeholder='Title' >  <br>
-		  <input class='input-blog' name='shortContent' id="shortContent" placeholder='Short Description of your blog' >  <br>
-		 		<form action="/blog/uploadImage" method="post" enctype="multipart/form-data">
-			<h3> Upload A ThumbNail for Your Blog</h3><br>
-			<input type="file" required name="avatar" >
-			<input type="text "   style="display:none" id='idField' name='id'>
-			<button id='submitButton' class='cta-btn' style="display:none">submit</button>
-		  </form>
-	
-			  <div >
-        <br>
-       
-			  <h4>  Write Blog content here</h4>
-        <div style="width: 600px;paddding:10px; margin:auto">
-
-			  <input  id="editor" name='content' value='<h1>Write Your Blog Content</h1>' > 
-        </div>
-
-			</div> <br>
-		</form>
-	</div>
-			<div class='text-center col-12 '>
-		<button onclick="myfunction()" class="cta-btn mt-2 rounded-pill">Submit</button>
-			</div>
-      <hr>
-</div>
-
-
-
-
 
 </div>
 <section class="featured-posts" style="min-height: 100vh;">
@@ -146,14 +112,14 @@ margin: auto; margin-bottom:32px" id="collapseExample" >
         <div class="" >
             <div class="row">
             <!-- begin post -->
-                <% blogs.map(element=>{ %>
+                <% blogs.reverse().map(element=>{ %>
                     <div class="col-lg-6 col-md-6 col-12" style="margin-bottom: 20px;">
                         <a href="blog/<%= element.blogId%>">
                             <div class="card">
                             <div class="row">
                                 <div class="col-md-5 wrapthumbnail">
                                     <a href="blog/<%= element.blogId%>">
-                                    <%console.log(element)%>
+                                    <%console.log(1)%>
                                         <div class="thumbnail" style="background-image:url(<%=element.thumbImage%>); background-size: cover;width: 100%;height: 100%;background-repeat: no-repeat;background-position: center;min-height: 28vh;"></div>
                                     </a>
                                 </div>
@@ -164,20 +130,24 @@ margin: auto; margin-bottom:32px" id="collapseExample" >
                                         <%=element.shortContent%>
                                         </h4> 
                                         <div class="metafooter">
-                                            <div class="wrapfooter">
+                                            <div class="wrapfooter d-flex">
                                                 <span class="meta-footer-thumb">
                                                 <a href="/#">
+                                                      <img style='width:30px; heigth:30px;border-radius:30px'
+                                                       src="<%=element.authorImage%>" class="rounded " alt="...">
+                                          </a>
                                                  </span>
-                                                <span class="author-meta">
-                                                <span class="post-name"><a href="author.html">
-                                                sattvalabs</a></span><br/>
-                                                <span class="post-date"><%=element.date%></span>
-                                                <!-- <span class="dot"></span><span class="post-read"> 
-                        
-                                                <%=element.time%>
-                                                </span> -->
-                                                </span>
-                                                <span class="post-read-more"><a href="blog/<%= element.blogId%>" title="Read Story"></a></span>
+                                                <span class="author-meta ml-3">
+                                                <span class="post-name "><a href="/">
+                                                <div>
+                                              <%=element.authorName%>  </a></span><br/>
+                                                <span class="post-date"><%=element.month%>, <%=element.day%></span>
+                                                </div>
+                                             
+                                              
+                                                <span class="post-read-more">
+                                                <a target='_blank' href="blog/<%= element.blogId%>" title="Read Story">
+                                                </a></span>
                                             </div>
                                             	<div>
 										
@@ -403,16 +373,24 @@ function deleteBlog(id){
     console.log('done')
   });
 }
- function adminPanel(){
   let token=localStorage.getItem('token')
+ function adminPanel(){
 let a=document.createElement('a')
 
 a.href='/adminPanel/'+token
 a.click()
 }
+function AddPanel(){
+  let token=localStorage.getItem('token')
+let a=document.createElement('a')
+
+a.href='/blog/AddBlog/'+token
+a.click()
+}
     </script>
 
 <script>
+
   const currentLocation = location.href;
   console.log("Current location", location.href);
 
